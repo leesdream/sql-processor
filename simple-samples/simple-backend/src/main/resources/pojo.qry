@@ -29,6 +29,12 @@ package org.sample.model {
     UNKNOWN ::: "0"
   }
 
+  enum UserRole serializable 1  {
+    value : java.lang.String
+    ROLE_ADMIN ::: "A"
+    ROLE_USER ::: "U"
+  }
+
   @Model ::: value "SimpleWeb.model.Contact", paging true, readMethod "simpleService.loadContacts"
   @@@JsonIgnore
   @@@@JsonIgnore
@@ -95,6 +101,19 @@ package org.sample.model {
     isDef ::: dateOfBirth ssn
     toString ::: dateOfBirth id lastName ssn gender firstName version
   }
+
+  pojo User serializable 1 operators {
+    id : java.lang.Long primaryKey index 1
+    username : java.lang.String required
+    password : java.lang.String required
+    role :: UserRole required
+    equals ::: id
+    hashCode ::: id
+    toInit :::
+    isDef :::
+    toString ::: id username role password
+  }
+
 }
 
 package org.sample.web.form {

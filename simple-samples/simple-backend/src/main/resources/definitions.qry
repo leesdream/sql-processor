@@ -18,6 +18,7 @@ pojogen-implements-interfaces java.io.Serializable;
 //pojogen-rename-tables CONTACT_CTYPE->CONTACT_TYPE;
 pojogen-rename-columns CONTACT_CTYPE I0->HOME I1->BUSINESS I2->ABROAD; 
 pojogen-rename-columns PERSON_GENDER M->MALE F->FEMALE I0->UNKNOWN; 
+pojogen-rename-columns USER_ROLE A->ROLE_ADMIN U->ROLE_USER; 
 // operators
 pojogen-generate-operators;
 // ExtJS rworkaround
@@ -46,6 +47,8 @@ metagen-optional-features SELECT_COUNTRY IOPT=SURROUND_QUERY_MIN_LEN=1;
 table contact CONTACT;
 table country COUNTRY;
 table person PERSON;
+table user USER;
+
 
 metagen-function-result AN_HOUR_BEFORE stamp;
 metagen-procedure-result-set NEW_PERSON_RET_RS PERSON;

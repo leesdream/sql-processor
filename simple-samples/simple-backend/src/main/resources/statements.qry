@@ -29,6 +29,7 @@ INSERT_PERSON(CRUD,inx=Person,outx=Person,tab=person,MYSQL)=
 ;
 // generated
 
+
 INSERT_CONTACT(CRUD,inx=Contact,outx=Contact,tab=contact)=
   insert into %%CONTACT (%ID, %PERSON_ID, %CTYPE, %ADDRESS, %PHONE_NUMBER, %VERSION, %COUNTRY_CODE)
   {= values (:id(seq=SIMPLE_SEQUENCE), :personId, :ctype, :address, :phoneNumber, :version, :country.code) }
@@ -179,4 +180,51 @@ DELETE_PERSON(CRUD,inx=Person,outx=Person,tab=person)=
     {& %ID = :id(!empty) }
     {& %VERSION = :version(!empty) }
   }
+;
+
+INSERT_USER(CRUD,inx=User,outx=User,tab=user)=
+  insert into %%USER (%ID, %USERNAME, %PASSWORD, %ROLE)
+  {= values (:id(seq=SIMPLE_SEQUENCE), :username, :password, :role) }
+;
+
+GET_USER(CRUD,inx=User,outx=User,tab=user)=
+  select %ID @id(id), %USERNAME @username, %PASSWORD @password, %ROLE @role
+  from %%USER
+  {= where
+    {& %ID ::= :id }
+    {& %USERNAME ::= :username }
+    {& %PASSWORD ::= :password }
+    {& %ROLE ::= :role }
+  }
+;
+
+UPDATE_USER(CRUD,inx=User,outx=User,tab=user)=
+  update %%USER
+  {= set
+    { ,%USERNAME = :username }
+    { ,%PASSWORD = :password }
+    { ,%ROLE = :role }
+  }
+  {= where
+    {& %ID = :id(!empty) }
+  }
+;
+
+DELETE_USER(CRUD,inx=User,outx=User,tab=user)=
+  delete from %%USER
+  {= where
+    {& %ID = :id(!empty) }
+  }
+;
+
+SELECT_USER(QRY,inx=User,outx=User,tab=user)=
+  select %ID @id(id), %USERNAME @username, %PASSWORD @password, %ROLE @role
+  from %%USER
+  {= where
+    {& %ID ::= :id }
+    {& UPPER(%USERNAME) like :+username }
+    {& UPPER(%PASSWORD) like :+password }
+    {& UPPER(%ROLE) like :+role }
+  }
+  {#1 order by %ID }
 ;

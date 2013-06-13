@@ -17,6 +17,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
@@ -44,6 +45,7 @@ public class SimpleService {
         binder.registerCustomEditor(String.class, new StringTrimmerEditor(true));
     }
 
+    @PreAuthorize("hasAnyRole('ROLE_USER,ROLE_ADMIN')")
     @ExtDirectMethod(value = ExtDirectMethodType.STORE_READ, group = "person")
     public ExtDirectStoreReadResult<Person> loadPeople(ExtDirectStoreReadRequest request) throws Exception {
         logger.info("listPeople -> " + request);
@@ -64,6 +66,7 @@ public class SimpleService {
         return result;
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @ExtDirectMethod(value = ExtDirectMethodType.FORM_POST, group = "person")
     public ExtDirectFormPostResult createPerson(@Valid Person person, BindingResult result) {
         ExtDirectFormPostResult postResult = new ExtDirectFormPostResult(result);
@@ -77,6 +80,7 @@ public class SimpleService {
         return postResult;
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @ExtDirectMethod(value = ExtDirectMethodType.FORM_POST, group = "person")
     public ExtDirectFormPostResult updatePerson(@Valid Person person, BindingResult result) {
         ExtDirectFormPostResult postResult = new ExtDirectFormPostResult(result);
@@ -96,6 +100,7 @@ public class SimpleService {
         return postResult;
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @ExtDirectMethod(value = ExtDirectMethodType.FORM_POST, group = "person")
     public ExtDirectFormPostResult deletePerson(Person person, BindingResult result) {
         ExtDirectFormPostResult postResult = new ExtDirectFormPostResult(result);
@@ -112,6 +117,7 @@ public class SimpleService {
         return postResult;
     }
 
+    @PreAuthorize("hasAnyRole('ROLE_USER,ROLE_ADMIN')")
     @ExtDirectMethod(value = ExtDirectMethodType.STORE_READ, group = "person")
     public ExtDirectStoreReadResult<Contact> loadContacts(ExtDirectStoreReadRequest request) throws Exception {
         logger.info("loadContacts -> " + request);
@@ -132,6 +138,7 @@ public class SimpleService {
         return result;
     }
 
+    @PreAuthorize("hasAnyRole('ROLE_USER,ROLE_ADMIN')")
     @ExtDirectMethod(value = ExtDirectMethodType.FORM_POST, group = "person")
     public ExtDirectFormPostResult createContact(@Valid Contact contact, BindingResult result) {
         ExtDirectFormPostResult postResult = new ExtDirectFormPostResult(result);
@@ -146,6 +153,7 @@ public class SimpleService {
         return postResult;
     }
 
+    @PreAuthorize("hasAnyRole('ROLE_USER,ROLE_ADMIN')")
     @ExtDirectMethod(value = ExtDirectMethodType.FORM_POST, group = "person")
     public ExtDirectFormPostResult updateContact(@Valid Contact contact, BindingResult result) {
         ExtDirectFormPostResult postResult = new ExtDirectFormPostResult(result);
@@ -165,6 +173,7 @@ public class SimpleService {
         return postResult;
     }
 
+    @PreAuthorize("hasAnyRole('ROLE_USER,ROLE_ADMIN')")
     @ExtDirectMethod(value = ExtDirectMethodType.FORM_POST, group = "person")
     public ExtDirectFormPostResult deleteContact(Contact contact, BindingResult result) {
         ExtDirectFormPostResult postResult = new ExtDirectFormPostResult(result);
@@ -181,6 +190,7 @@ public class SimpleService {
         return postResult;
     }
 
+    @PreAuthorize("hasAnyRole('ROLE_USER,ROLE_ADMIN')")
     @ExtDirectMethod(value = ExtDirectMethodType.STORE_READ, group = "person")
     public ExtDirectStoreReadResult<Country> loadCountries(ExtDirectStoreReadRequest request) throws Exception {
         logger.info("loadCountries -> " + request);

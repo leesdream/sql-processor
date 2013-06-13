@@ -16,6 +16,7 @@
         <version.sql-processor>2.2.2-SNAPSHOT</version.sql-processor>
         <version.antlr>3.4</version.antlr>
         <spring.version>3.2.2.RELEASE</spring.version>
+        <spring.security.version>3.1.4.RELEASE</spring.security.version>
         <version.commons-dbcp>1.4</version.commons-dbcp>
         <version.log4j>1.2.17</version.log4j>
         <version.slf4j>1.7.2</version.slf4j>
@@ -231,6 +232,25 @@
             <groupId>ch.ralscha</groupId>
             <artifactId>extdirectspring</artifactId>
             <version>${eds.version}</version>
+        </dependency>
+
+        <!-- Spring Security -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${spring.security.version}</version>
         </dependency>
 
         <!-- LIBS -->

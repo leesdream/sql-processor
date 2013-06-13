@@ -22,7 +22,7 @@
     <bean id="configuration" class="ch.ralscha.extdirectspring.controller.Configuration">
         <property name="sendExceptionMessage" value="true" />
     </bean>
-    
+
     <!-- define cache annotation driver - for DAO class proxy target class = true, for DAO interface false (default) -->
     <cache:annotation-driven proxy-target-class="true" />
 
@@ -69,6 +69,7 @@
     <bean id="personDao" class="org.sample.web.dao.PersonExtDao" parent="dao" />
     <bean id="contactDao" class="org.sample.dao.ContactDao" parent="dao" />
     <bean id="countryDao" class="org.sample.dao.CountryDao" parent="dao" />
+    <bean id="userDao" class="org.sample.dao.UserDao" parent="dao" />
 
     <bean id="sqlFactory" class="org.sqlproc.engine.jdbc.JdbcEngineFactory">
         <property name="metaFilesNames">
@@ -79,7 +80,7 @@
         <property name="filter" value="${db.type}" />
     </bean>
 
-    <bean id="beanUtils" class="org.sample.web.util.BeanExtJsUtils"/>
+    <bean id="beanUtils" class="org.sample.web.util.BeanExtJsUtils" />
     <bean id="personService" class="org.sample.web.app.PersonService">
         <property name="personDao" ref="personDao" />
     </bean>
@@ -89,6 +90,9 @@
     <bean id="countryService" class="org.sample.web.app.CountryService">
         <property name="countryDao" ref="countryDao" />
     </bean>
+    <bean id="userService" class="org.sample.web.app.UserService">
+        <property name="userDao" ref="userDao" />
+    </bean>
 
     <bean id="simpleService" class="org.sample.web.service.SimpleService">
         <property name="personService" ref="personService" />
@@ -96,5 +100,10 @@
         <property name="countryService" ref="countryService" />
         <property name="beanUtils" ref="beanUtils" />
     </bean>
+
+    <bean id="customAuthenticationProvider" class="org.sample.web.security.CustomAuthenticationProvider">
+        <property name="userService" ref="userService" />
+    </bean>
+
 
 </beans>

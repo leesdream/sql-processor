@@ -8,15 +8,23 @@
 		http://www.springframework.org/schema/util 
 		http://www.springframework.org/schema/util/spring-util-3.1.xsd">
 
-
-    <http use-expressions="true">
-        <intercept-url pattern="/**" access="isAuthenticated()" />
-        <http-basic />
+    <http use-expressions="true" entry-point-ref="authenticationEntryPoint">
+        <intercept-url pattern="/login*" access="permitAll" />
+        <intercept-url pattern="/logout*" access="permitAll" />
+        <intercept-url pattern="/router*" access="isAuthenticated()" />
+        <logout logout-url="/logout" />
+        <custom-filter ref="authenticationFilter" position="FORM_LOGIN_FILTER" />
     </http>
+
+    <beans:bean id="authenticationEntryPoint" class="org.springframework.security.web.authentication.Http403ForbiddenEntryPoint" />
+
+    <beans:bean id="authenticationFilter" class="org.sample.web.security.CustomUsernamePasswordAuthenticationFilter">
+        <beans:property name="authenticationManager" ref="authenticationManager" />
+    </beans:bean>
 
     <global-method-security pre-post-annotations="enabled" />
 
-    <authentication-manager>
+    <authentication-manager alias="authenticationManager">
         <authentication-provider ref="customAuthenticationProvider" />
     </authentication-manager>
 

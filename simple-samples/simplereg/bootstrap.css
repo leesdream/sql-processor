@@ -4,4 +4,4 @@
  * to the most recently built CSS file for the application to allow index.html
  * in the development directory to load properly (i.e., "dev mode").
  */
-@import 'build/Simplereg/production/resources/Simplereg-all.css';
+@import 'build/Simplereg/testing/resources/Simplereg-all.css';

@@ -5,18 +5,15 @@
  * metadata-driven class system features 
  */
 Ext.Loader.addClassPathMappings({
-  "ExtThemeNeptune": "../../ext/packages/ext-theme-neptune/overrides",
   "Simplereg": "../../app",
   "Ext": "../../ext/src",
   "Ext.rtl.EventObjectImpl": "../../ext/src/rtl/EventObject.js"
 });
 Ext.ClassManager.addNameAlternateMappings({
-  "ExtThemeNeptune.container.ButtonGroup": [],
   "Simplereg.view.PersonList": [],
-  "Ext.ux.ajax.DataSimlet": [],
   "Ext.ux.grid.TransformGrid": [],
+  "Ext.ux.ajax.DataSimlet": [],
   "Simplereg.view.RelativeCreate": [],
-  "ExtThemeNeptune.toolbar.Paging": [],
   "Ext.ux.event.Driver": [],
   "Ext.ux.ajax.XmlSimlet": [],
   "Simplereg.view.override.ContactDelete": [],
@@ -24,15 +21,15 @@ Ext.ClassManager.addNameAlternateMappings({
   "Simplereg.store.Genders": [],
   "Ext.ux.grid.menu.ListMenu": [],
   "Simplereg.store.ContactTypes": [],
-  "Simplereg.view.override.PersonData": [],
   "Simplereg.view.ContactDelete": [],
+  "Simplereg.view.override.PersonData": [],
   "Ext.ux.form.MultiSelect": [
     "Ext.ux.Multiselect"
   ],
   "Simplereg.model.RelativePerson": [],
   "Simplereg.store.Relations": [],
-  "Simplereg.view.override.PersonCreate": [],
   "Ext.ux.PreviewPlugin": [],
+  "Simplereg.view.override.PersonCreate": [],
   "Simplereg.store.QueryPeople": [],
   "Simplereg.view.RelativeDelete": [],
   "Simplereg.view.PersonData": [],
@@ -46,7 +43,6 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.ux.SlidingPager": [],
   "Ext.ux.TabReorderer": [],
   "Ext.ux.grid.filter.NumericFilter": [],
-  "ExtThemeNeptune.panel.Table": [],
   "Simplereg.view.override.PersonDetail": [],
   "Ext.ux.event.Recorder": [],
   "Simplereg.store.Contacts": [],
@@ -56,26 +52,22 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.ux.grid.filter.BooleanFilter": [],
   "Simplereg.model.Contact": [],
   "Ext.ux.TabScrollerMenu": [],
-  "ExtThemeNeptune.menu.Separator": [],
   "Ext.ux.IFrame": [],
   "Simplereg.view.PersonCreate": [],
   "Ext.ux.form.SearchField": [],
-  "Simplereg.view.PersonContacts": [],
   "Ext.ux.dd.CellFieldDropZone": [],
+  "Simplereg.view.PersonContacts": [],
   "Simplereg.view.RelativeUpdate": [],
   "Ext.ux.LiveSearchGridPanel": [],
   "Ext.ux.grid.filter.DateFilter": [],
   "Simplereg.model.PersonIdentity": [],
   "Simplereg.view.override.RelativeCreate": [],
   "Ext.ux.TreePicker": [],
-  "ExtThemeNeptune.grid.RowEditor": [],
-  "ExtThemeNeptune.picker.Month": [],
   "Simplereg.store.People": [],
   "Simplereg.view.ContactCreate": [],
   "Ext.ux.data.PagingMemoryProxy": [
     "Ext.data.PagingMemoryProxy"
   ],
-  "ExtThemeNeptune.menu.Menu": [],
   "Ext.ux.BoxReorderer": [],
   "Simplereg.view.override.PersonList": [],
   "Simplereg.store.RelativeTypes": [],
@@ -87,17 +79,14 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.ux.FieldReplicator": [],
   "Simplereg.view.override.ContactCreate": [],
   "Simplereg.view.override.PersonContacts": [],
-  "ExtThemeNeptune.panel.Panel": [],
   "Ext.ux.grid.filter.ListFilter": [],
   "Simplereg.model.Country": [],
   "Ext.ux.dd.PanelFieldDragZone": [],
   "Simplereg.view.Page": [],
   "Simplereg.view.PersonUpdate": [],
-  "ExtThemeNeptune.toolbar.Toolbar": [],
-  "ExtThemeNeptune.tab.Tab": [],
   "Simplereg.controller.Common": [],
-  "Simplereg.view.override.PersonRelatives": [],
   "Simplereg.model.Person": [],
+  "Simplereg.view.override.PersonRelatives": [],
   "Ext.ux.GMapPanel": [],
   "Simplereg.view.PersonSelect": [],
   "Simplereg.store.Relatives": [],
@@ -108,23 +97,20 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.ux.statusbar.ValidationStatus": [],
   "Ext.ux.layout.Center": [],
   "Ext.ux.DataView.Animated": [],
-  "ExtThemeNeptune.resizer.Splitter": [],
   "Ext.ux.statusbar.StatusBar": [
     "Ext.ux.StatusBar"
   ],
   "Simplereg.view.override.RelativeDelete": [],
   "Simplereg.view.PersonSearch": [],
-  "ExtThemeNeptune.layout.component.Dock": [],
-  "Simplereg.view.ContactUpdate": [],
   "Ext.ux.grid.menu.RangeMenu": [],
+  "Simplereg.view.ContactUpdate": [],
   "Ext.ux.RowExpander": [],
   "Ext.ux.event.Player": [],
-  "ExtThemeNeptune.panel.Tool": [],
   "Ext.ux.ToolbarDroppable": [],
   "Ext.ux.event.Maker": [],
   "Simplereg.store.Countries": [],
-  "Simplereg.view.PersonRelatives": [],
   "Simplereg.view.override.ContactUpdate": [],
+  "Simplereg.view.PersonRelatives": [],
   "Ext.ux.DataView.Draggable": [],
   "Ext.ux.TabCloseMenu": [],
   "Simplereg.view.override.RelativeUpdate": [],
@@ -134,23 +120,19 @@ Ext.ClassManager.addNameAlternateMappings({
     "Ext.ux.ItemSelector"
   ],
   "Ext.ux.ajax.JsonSimlet": [],
-  "Simplereg.view.PersonDetail": [],
   "Simplereg.view.PersonDelete": [],
+  "Simplereg.view.PersonDetail": [],
   "Ext.ux.Spotlight": [],
-  "ExtThemeNeptune.form.field.HtmlEditor": [],
   "Simplereg.view.override.Page": [],
-  "Ext.ux.grid.FiltersFeature": [],
-  "ExtThemeNeptune.Component": []
+  "Ext.ux.grid.FiltersFeature": []
 });
 Ext.ClassManager.addNameAliasMappings({
-  "ExtThemeNeptune.container.ButtonGroup": [],
   "Simplereg.view.PersonList": [
     "widget.personlist"
   ],
-  "Ext.ux.ajax.DataSimlet": [],
   "Ext.ux.grid.TransformGrid": [],
+  "Ext.ux.ajax.DataSimlet": [],
   "Simplereg.view.RelativeCreate": [],
-  "ExtThemeNeptune.toolbar.Paging": [],
   "Ext.ux.event.Driver": [],
   "Ext.ux.ajax.XmlSimlet": [
     "simlet.xml"
@@ -160,18 +142,18 @@ Ext.ClassManager.addNameAliasMappings({
   "Simplereg.store.Genders": [],
   "Ext.ux.grid.menu.ListMenu": [],
   "Simplereg.store.ContactTypes": [],
-  "Simplereg.view.override.PersonData": [],
   "Simplereg.view.ContactDelete": [],
+  "Simplereg.view.override.PersonData": [],
   "Ext.ux.form.MultiSelect": [
     "widget.multiselect",
     "widget.multiselectfield"
   ],
   "Simplereg.model.RelativePerson": [],
   "Simplereg.store.Relations": [],
-  "Simplereg.view.override.PersonCreate": [],
   "Ext.ux.PreviewPlugin": [
     "plugin.preview"
   ],
+  "Simplereg.view.override.PersonCreate": [],
   "Simplereg.store.QueryPeople": [],
   "Simplereg.view.RelativeDelete": [],
   "Simplereg.view.PersonData": [
@@ -195,7 +177,6 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.ux.grid.filter.NumericFilter": [
     "gridfilter.numeric"
   ],
-  "ExtThemeNeptune.panel.Table": [],
   "Simplereg.view.override.PersonDetail": [],
   "Ext.ux.event.Recorder": [],
   "Simplereg.store.Contacts": [],
@@ -209,7 +190,6 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.ux.TabScrollerMenu": [
     "plugin.tabscrollermenu"
   ],
-  "ExtThemeNeptune.menu.Separator": [],
   "Ext.ux.IFrame": [
     "widget.uxiframe"
   ],
@@ -217,10 +197,10 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.ux.form.SearchField": [
     "widget.searchfield"
   ],
+  "Ext.ux.dd.CellFieldDropZone": [],
   "Simplereg.view.PersonContacts": [
     "widget.personcontacts"
   ],
-  "Ext.ux.dd.CellFieldDropZone": [],
   "Simplereg.view.RelativeUpdate": [],
   "Ext.ux.LiveSearchGridPanel": [],
   "Ext.ux.grid.filter.DateFilter": [
@@ -231,14 +211,11 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.ux.TreePicker": [
     "widget.treepicker"
   ],
-  "ExtThemeNeptune.grid.RowEditor": [],
-  "ExtThemeNeptune.picker.Month": [],
   "Simplereg.store.People": [],
   "Simplereg.view.ContactCreate": [],
   "Ext.ux.data.PagingMemoryProxy": [
     "proxy.pagingmemory"
   ],
-  "ExtThemeNeptune.menu.Menu": [],
   "Ext.ux.BoxReorderer": [],
   "Simplereg.view.override.PersonList": [],
   "Simplereg.store.RelativeTypes": [],
@@ -252,7 +229,6 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.ux.FieldReplicator": [],
   "Simplereg.view.override.ContactCreate": [],
   "Simplereg.view.override.PersonContacts": [],
-  "ExtThemeNeptune.panel.Panel": [],
   "Ext.ux.grid.filter.ListFilter": [
     "gridfilter.list"
   ],
@@ -260,11 +236,9 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.ux.dd.PanelFieldDragZone": [],
   "Simplereg.view.Page": [],
   "Simplereg.view.PersonUpdate": [],
-  "ExtThemeNeptune.toolbar.Toolbar": [],
-  "ExtThemeNeptune.tab.Tab": [],
   "Simplereg.controller.Common": [],
-  "Simplereg.view.override.PersonRelatives": [],
   "Simplereg.model.Person": [],
+  "Simplereg.view.override.PersonRelatives": [],
   "Ext.ux.GMapPanel": [
     "widget.gmappanel"
   ],
@@ -285,25 +259,22 @@ Ext.ClassManager.addNameAliasMappings({
     "layout.ux.center"
   ],
   "Ext.ux.DataView.Animated": [],
-  "ExtThemeNeptune.resizer.Splitter": [],
   "Ext.ux.statusbar.StatusBar": [
     "widget.statusbar"
   ],
   "Simplereg.view.override.RelativeDelete": [],
   "Simplereg.view.PersonSearch": [],
-  "ExtThemeNeptune.layout.component.Dock": [],
-  "Simplereg.view.ContactUpdate": [],
   "Ext.ux.grid.menu.RangeMenu": [],
+  "Simplereg.view.ContactUpdate": [],
   "Ext.ux.RowExpander": [],
   "Ext.ux.event.Player": [],
-  "ExtThemeNeptune.panel.Tool": [],
   "Ext.ux.ToolbarDroppable": [],
   "Ext.ux.event.Maker": [],
   "Simplereg.store.Countries": [],
+  "Simplereg.view.override.ContactUpdate": [],
   "Simplereg.view.PersonRelatives": [
     "widget.personrelatives"
   ],
-  "Simplereg.view.override.ContactUpdate": [],
   "Ext.ux.DataView.Draggable": [],
   "Ext.ux.TabCloseMenu": [
     "plugin.tabclosemenu"
@@ -322,30 +293,13 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.ux.ajax.JsonSimlet": [
     "simlet.json"
   ],
+  "Simplereg.view.PersonDelete": [],
   "Simplereg.view.PersonDetail": [
     "widget.persondetail"
   ],
-  "Simplereg.view.PersonDelete": [],
   "Ext.ux.Spotlight": [],
-  "ExtThemeNeptune.form.field.HtmlEditor": [],
   "Simplereg.view.override.Page": [],
   "Ext.ux.grid.FiltersFeature": [
     "feature.filters"
-  ],
-  "ExtThemeNeptune.Component": []
+  ]
 });
-Ext.Loader.loadScript("../../ext/packages/ext-theme-neptune/overrides/Component.js");
-Ext.Loader.loadScript("../../ext/packages/ext-theme-neptune/overrides/panel/Panel.js");
-Ext.Loader.loadScript("../../ext/packages/ext-theme-neptune/overrides/layout/component/Dock.js");
-Ext.Loader.loadScript("../../ext/packages/ext-theme-neptune/overrides/toolbar/Toolbar.js");
-Ext.Loader.loadScript("../../ext/packages/ext-theme-neptune/overrides/container/ButtonGroup.js");
-Ext.Loader.loadScript("../../ext/packages/ext-theme-neptune/overrides/toolbar/Paging.js");
-Ext.Loader.loadScript("../../ext/packages/ext-theme-neptune/overrides/picker/Month.js");
-Ext.Loader.loadScript("../../ext/packages/ext-theme-neptune/overrides/form/field/HtmlEditor.js");
-Ext.Loader.loadScript("../../ext/packages/ext-theme-neptune/overrides/panel/Table.js");
-Ext.Loader.loadScript("../../ext/packages/ext-theme-neptune/overrides/grid/RowEditor.js");
-Ext.Loader.loadScript("../../ext/packages/ext-theme-neptune/overrides/resizer/Splitter.js");
-Ext.Loader.loadScript("../../ext/packages/ext-theme-neptune/overrides/menu/Menu.js");
-Ext.Loader.loadScript("../../ext/packages/ext-theme-neptune/overrides/menu/Separator.js");
-Ext.Loader.loadScript("../../ext/packages/ext-theme-neptune/overrides/panel/Tool.js");
-Ext.Loader.loadScript("../../ext/packages/ext-theme-neptune/overrides/tab/Tab.js");

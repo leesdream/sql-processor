@@ -1,5 +1,8 @@
 package org.sqlproc.engine.jmx;
 
+import java.util.Map;
+
+import org.sqlproc.engine.SqlEngine;
 import org.sqlproc.engine.SqlEngineException;
 import org.sqlproc.engine.SqlEngineFactory;
 
@@ -208,5 +211,23 @@ public class SqlSimpleFactoryJmx implements SqlSimpleFactoryMXBean {
      */
     public void setSqlEngineFactory(SqlEngineFactory sqlEngineFactory) {
         this.sqlEngineFactory = sqlEngineFactory;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public boolean setTrace(String name, Integer trace) {
+        Map<String, SqlEngine> dynamicEngines = sqlEngineFactory.getDynamicEngines();
+        if (dynamicEngines.containsKey(name)) {
+            dynamicEngines.get(name).setTrace(trace);
+            return true;
+        }
+        Map<String, SqlEngine> engines = sqlEngineFactory.getEngines();
+        if (engines.containsKey(name)) {
+            engines.get(name).setTrace(trace);
+            return true;
+        }
+        return false;
     }
 }

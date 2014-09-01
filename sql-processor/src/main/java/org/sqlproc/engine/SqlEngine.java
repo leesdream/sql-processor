@@ -86,6 +86,12 @@ public abstract class SqlEngine {
     protected Map<String, SqlProcessResult> processingCache = new ConcurrentHashMap<String, SqlProcessResult>();
 
     /**
+     * The time interval in milliseconds. In the case it's not zero, this value is the maximum interval, which doens't
+     * trigger the trace output.
+     */
+    protected Integer trace = 0;
+
+    /**
      * Creates a new instance of the SqlEngine from one META SQL statement and one SQL Mapping rule instance. Both
      * parameters are already pre-compiled instances using the ANTLR parsers. This is the recommended usage for the
      * runtime performance optimization. This constructor is devoted to be used from the {@link SqlProcessorLoader},
@@ -374,5 +380,60 @@ public abstract class SqlEngine {
             processingCache.put(cacheId, processResult);
         return processResult;
 
+    }
+
+    /**
+     * Sets the time interval in milliseconds. In the case it's not zero, this value is the maximum interval, which
+     * doens't trigger the trace output.
+     * 
+     * @param trace
+     *            the time interval in milliseconds
+     */
+    public void setTrace(Integer trace) {
+        this.trace = trace;
+    }
+
+    /**
+     * Holder for trace timestamp
+     */
+    protected static class Trace {
+        /**
+         * The time interval in milliseconds. In the case it's not zero, this value is the maximum interval, which
+         * doens't trigger the trace output.
+         */
+        public Integer trace = 0;
+
+        /**
+         * the last/current timestamp
+         */
+        long now = System.currentTimeMillis();
+
+        /**
+         * Constructor
+         * 
+         * @param trace
+         *            trace time interval in milliseconds
+         */
+        public Trace(Integer trace) {
+            this.trace = trace;
+        }
+    }
+
+    /**
+     * Trace the long running steps
+     * 
+     * @param step
+     *            the name of the step
+     * @param last
+     *            the last timestamp
+     * @return the current timestamp
+     */
+    protected void trace(String step, Trace trace) {
+        if (this.trace == null)
+            return;
+        final long now = System.currentTimeMillis();
+        if (now - trace.now > this.trace)
+            logger.info("SQLTRACE " + name + " " + step + " " + (now - trace.now));
+        trace.now = now;
     }
 }

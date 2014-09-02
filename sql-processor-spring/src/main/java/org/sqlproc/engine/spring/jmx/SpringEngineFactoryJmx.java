@@ -144,4 +144,13 @@ public class SpringEngineFactoryJmx extends SqlSimpleFactoryJmx implements SqlSi
     public boolean isLazyInit() {
         return super.isLazyInit();
     }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    @ManagedOperation(description = "Sets the time interval in milliseconds. In the case it's not zero, this value is the maximum interval, which doesn't trigger the trace output.")
+    public boolean setTrace(String name, Integer trace) {
+        return super.setTrace(name, trace);
+    }
 }

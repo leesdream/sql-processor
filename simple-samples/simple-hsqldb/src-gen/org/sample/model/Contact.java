@@ -50,10 +50,14 @@ public class Contact implements Serializable {
 
 	public void setPerson(Person person) {
 		this.person = person;
+		if (this.person != null)
+			this.personId = this.person.getId();
 	}
 
 	public Contact _setPerson(Person person) {
 		this.person = person;
+		if (this.person != null)
+			this.personId = this.person.getId();
 		return this;
 	}
 
@@ -106,6 +110,21 @@ public class Contact implements Serializable {
 		return this;
 	}
 
+	private Gender gender2;
+
+	public Gender getGender2() {
+		return gender2;
+	}
+
+	public void setGender2(Gender gender2) {
+		this.gender2 = gender2;
+	}
+
+	public Contact _setGender2(Gender gender2) {
+		this.gender2 = gender2;
+		return this;
+	}
+
 	@Size(max = 100)
 	private String xNote;
 
@@ -119,6 +138,27 @@ public class Contact implements Serializable {
 
 	public Contact _setxNote(String xNote) {
 		this.xNote = xNote;
+		return this;
+	}
+
+	private Long personId;
+
+	public Long getPersonId() {
+		return personId;
+	}
+
+	public void setPersonId(Long personId) {
+		this.personId = personId;
+		if (this.person == null)
+			this.person = new Person();
+		this.person.setId(personId);
+	}
+
+	public Contact _setPersonId(Long personId) {
+		this.personId = personId;
+		if (this.person == null)
+			this.person = new Person();
+		this.person.setId(personId);
 		return this;
 	}
 
@@ -209,7 +249,7 @@ public class Contact implements Serializable {
 	}
 
 	public enum Attribute {
-		xNote, phoneNumber
+		xNote, phoneNumber, gender2
 	}
 
 	private Set<String> nullValues = new HashSet<String>();
@@ -306,15 +346,15 @@ public class Contact implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Contact [id=" + id + ", xNote=" + xNote + ", phoneNumber=" + phoneNumber + ", address=" + address + ", type=" + type + "]";
+		return "Contact [id=" + id + ", xNote=" + xNote + ", phoneNumber=" + phoneNumber + ", address=" + address + ", personId=" + personId + ", type=" + type + ", gender2=" + gender2 + "]";
 	}
 
 	public String toStringFull() {
-		return "Contact [id=" + id + ", person=" + person + ", type=" + type + ", address=" + address + ", phoneNumber=" + phoneNumber + ", xNote=" + xNote + "]";
+		return "Contact [id=" + id + ", person=" + person + ", type=" + type + ", address=" + address + ", phoneNumber=" + phoneNumber + ", gender2=" + gender2 + ", xNote=" + xNote + ", personId=" + personId + "]";
 	}
 
 	public enum OpAttribute {
-		id, person, type, address, phoneNumber, xNote
+		id, person, type, address, phoneNumber, gender2, xNote, personId
 	}
 
 	private Map<String, String> operators = new HashMap<String, String>();

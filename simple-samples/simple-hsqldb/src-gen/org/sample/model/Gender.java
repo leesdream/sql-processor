@@ -4,30 +4,30 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-public enum PersonGender implements Serializable {
+public enum Gender implements Serializable {
 
 	MALE("M"), FEMALE("F"), UNKNOWN("0");
 		
 	private static final long serialVersionUID = 1L;
 	
-	private static Map<String, PersonGender> identifierMap = new HashMap<String, PersonGender>();
+	private static Map<String, Gender> identifierMap = new HashMap<String, Gender>();
 
 	static {
-		for (PersonGender value : PersonGender.values()) {
+		for (Gender value : Gender.values()) {
 			identifierMap.put(value.getValue(), value);
 		}
 	}
 
 	private String value;
 
-	private PersonGender(String value) {
+	private Gender(String value) {
 		this.value = value;
 	}
 
-	public static PersonGender fromValue(String value) {
-		PersonGender result = identifierMap.get(value);
+	public static Gender fromValue(String value) {
+		Gender result = identifierMap.get(value);
 		if (result == null) {
-			throw new IllegalArgumentException("No PersonGender for value: " + value);
+			throw new IllegalArgumentException("No Gender for value: " + value);
 		}
 		return result;
 	}
